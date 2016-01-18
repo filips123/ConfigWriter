@@ -20,13 +20,19 @@ Vse datoteke razen README.md prenesite na strežnik.
 * Za zapis v datoteko napišite še:<br>
 <code>$data = $config->toString('','',''); //Prvi argument je ime razreda (po želji drugače ''), drugi je kaj naj bo v razredu (po želji drugače ''), tretji pa dodatna koda izven razreda (po želji drugače ''). </code><br>
 <br><code>$config->toFile('',$data); //Prvi argument je ime datoteke v katero se naj zapiše, drugega pustite privzeto.</code><br>
+<code>?></code><br>
+
 
 <h3>Prebiranje podatkov</h3>
 * Če ste uporabili razred vpišite:<br>
+<code><?php</code><br>
 <code>include('pot_do_datoteke'); //Namesto pot_do_datoteke vpišite pot do datoteke.</code><br><br>
 <code>$class = new class; //Namesto class vpišite ime razreda.</code><br><br>
 <code>$class->$ime_vrednosti; //Namesto class vpišite ime razreda, namesto ime_vrednosti vpišite ime vrednosti. Ta koda ne vrača vrednosti.Za izpis uporabite echo ali print.</code><br>
+<code>?></code><br>
 
 * Če niste uporabili razreda vpišite:<br>
+<code><?php</code><br>
 <code>include('pot_do_datoteke'); //Namesto pot_do_datoteke vpišite pot do datoteke.</code><br>
 <code>$ime_vrednosti; //Namesto ime_vrednosti vpišite ime vrednosti. Ta koda ne vrača vrednosti.Za izpis uporabite echo ali print.</code><br>
+<code>?></code><br>

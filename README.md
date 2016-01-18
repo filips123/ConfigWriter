@@ -1,2 +1,2 @@
-# php-config
-With this package you can easily write configuration files in the form of classes or not
+# PHP config
+S tem paketom boste lahko enostavno zapisovali konfiguracijske datoteke v obliki razredov ali pa ne

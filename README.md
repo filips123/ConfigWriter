@@ -42,3 +42,16 @@ include('pot_do_datoteke'); //Namesto pot_do_datoteke vpišite pot do datoteke.
 $ime_vrednosti; //Namesto ime_vrednosti vpišite ime vrednosti. Ta koda ne vrača vrednosti.Za izpis uporabite echo ali print.
 ?>
 ```
+<h3>Napake</h3>
+* Če jih želite napake v datoteko, ki zapisuje config datoteko vpišite:
+```php
+<?php
+echo $config->status_message();
+?>
+```
+* Če želite izpisati status v datoteko, ki zapisuje config datoteko vpišite:
+```php
+<?php
+echo $config->status(); //1 pomeni dokončano, 0 pomeni napaka.
+?>
+```

@@ -1,6 +1,7 @@
 {
     "name": "fillips/php-config",
     "description": "S tem paketom boste lahko enostavno zapisovali konfiguracijske datoteke v obliki razredov ali pa v navadni.",
+     "type": "project",
         "require": {
         "filips/php-config": "1.*"
     },

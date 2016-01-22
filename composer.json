@@ -1,8 +1,4 @@
 {
-    "name": "your-vendor-name/package-name",
-    "description": "A short description of what your package does",
-    "require": {
-        "php": ">=5.3.0",
-        "another-vendor/package": "1.*"
-    }
+    "name": "fillips/php-config",
+    "description": "S tem paketom boste lahko enostavno zapisovali konfiguracijske datoteke v obliki razredov ali pa v navadni."
 }

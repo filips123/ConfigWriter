@@ -1,9 +1,0 @@
-
-{
-    "name": "lfilips/php-config",
-    "description": "S tem paketom boste lahko enostavno zapisovali konfiguracijske datoteke v obliki razredov ali pa v navadni.",
-    "keywords": ["filips", "php-config"],
-    "type": "project",
-    "license": "GNU"
-    }
-    

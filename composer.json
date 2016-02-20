@@ -1,0 +1,19 @@
+{
+    "name": "filips/php-config",
+    "description": "S tem paketom boste lahko enostavno zapisovali konfiguracijske datoteke v obliki razredov ali pa v navadni.",
+    "keywords": [php, pack, config, php-config],
+    "homepage": "https://github.com/maximebf/atomik",
+    "type": "pack",
+    "license": "MIT",
+    "authors": [{
+        "name": "Filip",
+        "email": "filip.stamcar@hotmail.com",
+        "homepage": "http://www.filip.phpnet.us"
+    }],
+    "require": {
+        "php": ">=5.0.0"
+    },
+    "require-dev": {
+        ""php": ">=5.0.0"
+    }
+}

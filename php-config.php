@@ -137,21 +137,4 @@ $string .="
 		return $GLOBALS['status_message'];
 	}
 }
-$config = new Config;
-$config->language('slovenian');
-$config->showClass(1);
-$config->showOther(1);
-
-$config->comment('test');
-$config->set('display_offline_message', 1,'');
-$config->set('offline', '1',2);
-$config->comment('testek');
-$config->set('offline_message', 'hej','nej');
-$config->set('offline_message2', 'hej','nej');
-
-$data = $config->toString('Config','//addclass','//addnoclass');
-$config->toFile('config.php',$data);
-echo $config->status_message();
-
-
 ?>

@@ -1,3 +1,0 @@
-# Forces new Travis-CI Infrastructure
-language: php
-script: php-config

@@ -5,6 +5,7 @@ S tem paketom boste lahko enostavno zapisovali konfiguracijske datoteke v obliki
 Vse datoteke razen README.md prenesite na strežnik.
 
 <h2>Uporaba</h2>
+
 * Najprej vpišite kodo:<br>
 
 ```php

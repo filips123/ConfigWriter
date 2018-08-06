@@ -52,6 +52,12 @@ class Record implements ArrayAccess
      */
     public function &offsetGet($offset)
     {
+        // @codeCoverageIgnoreStart
+        if (!isset($this->value[$offset])) {
+            $this->value[$offset] = null;
+        }
+        // @codeCoverageIgnoreEnd
+
         return $this->value[$offset];
     }
     /**

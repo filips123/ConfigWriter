@@ -220,6 +220,12 @@ abstract class AbstractConfig implements ConfigInterface, ArrayAccess
      */
     public function &offsetGet($offset)
     {
+        // @codeCoverageIgnoreStart
+        if (!isset($this->data[$offset])) {
+            $this->data[$offset] = null;
+        }
+        // @codeCoverageIgnoreEnd
+
         return $this->data[$offset];
     }
 

@@ -29,15 +29,16 @@ class Config extends AbstractConfig
     /**
      * Writes configuration to string.
      *
-     * @param WriterInterface $writer Configuration writer
+     * @param WriterInterface $writer  Configuration writer
+     * @param array           $options Writer options (optional)
      *
      * @return string Encoded configuration string
      *
      * @throws WriteException If there is an error while writing a string
      */
-    public function toString(WriterInterface $writer)
+    public function toString(WriterInterface $writer, $options = [])
     {
-        return $writer->write($this);
+        return $writer->write($this, $options);
     }
 
     /**
@@ -45,13 +46,14 @@ class Config extends AbstractConfig
      *
      * @param string          $filename Configuration file name
      * @param WriterInterface $writer   Configuration writer (optional)
+     * @param array           $options  Writer options (optional)
      *
      * @return void
      *
      * @throws UnsupportedFormatException If file extension is unsupported
      * @throws WriteException             If there is an error while writing a file
      */
-    public function toFile($filename, WriterInterface $writer = null)
+    public function toFile($filename, WriterInterface $writer = null, $options = [])
     {
         if ($writer === null) {
             // Get file information
@@ -68,7 +70,7 @@ class Config extends AbstractConfig
             $writer = $this->getWriter($extension);
         }
 
-        $data = $this->toString($writer);
+        $data = $this->toString($writer, $options);
 
         // @codeCoverageIgnoreStart
         if (!is_dir(dirname($filename))) {

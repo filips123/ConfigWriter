@@ -2,6 +2,10 @@
 
 namespace ConfigWriter;
 
+use ConfigWriter\Exceptions\UnsupportedFormatException;
+use ConfigWriter\Exceptions\WriteException;
+use ConfigWriter\Writers\WriterInterface;
+
 /**
  * Configuration class.
  *
@@ -16,22 +20,82 @@ namespace ConfigWriter;
 class Config extends AbstractConfig
 {
     /**
+     * Stores the supported writers.
+     *
+     * @var array
+     */
+    protected $supportedWriters = [];
+
+    /**
      * Writes configuration to string.
      *
-     * TODO: Documentation
+     * @param WriterInterface $writer Configuration writer
+     *
+     * @return string Encoded configuration string
+     *
+     * @throws WriteException If there is an error while writing a string
      */
-    public function toString($format)
+    public function toString(WriterInterface $writer)
     {
-        // TODO: Return configuration as a string.
+        return $writer->write($this);
     }
 
     /**
      * Writes configuration to file.
      *
-     * TODO: Documentation
+     * @param string          $filename Configuration file name
+     * @param WriterInterface $writer   Configuration writer (optional)
+     *
+     * @return void
+     *
+     * @throws UnsupportedFormatException If file extension is unsupported
+     * @throws WriteException             If there is an error while writing a file
      */
-    public function toFile($filename, $format)
+    public function toFile($filename, WriterInterface $writer = null)
     {
-        // TODO: Write configuration to file using method `toString()`.
+        if ($writer === null) {
+            // Get file information
+            $info = pathinfo($filename);
+            $parts = explode('.', $info['basename']);
+            $extension = array_pop($parts);
+
+            // Skip the `dist` extension
+            if ($extension === 'dist') {
+                $extension = array_pop($parts);
+            }
+
+            // Get configuration writer
+            $writer = $this->getWriter($extension);
+        }
+
+        $data = $this->toString($writer);
+
+        // @codeCoverageIgnoreStart
+        if (!is_dir(dirname($filename))) {
+            mkdir(dirname($filename), 0777, true);
+        }
+        // @codeCoverageIgnoreEnd
+
+        file_put_contents($filename, $data);
+    }
+
+    /**
+     * Gets a writer for a given file extension.
+     *
+     * @param string $extension File extension
+     *
+     * @return WriterInterface Writer for a given file extension
+     *
+     * @throws UnsupportedFormatException If `$extension` is an unsupported file format
+     */
+    protected function getWriter($extension)
+    {
+        foreach ($this->supportedWriters as $writer) {
+            if (in_array($extension, $writer::getSupportedExtensions())) {
+                return new $writer();
+            }
+        }
+
+        throw new UnsupportedFormatException('Unsupported configuration format');
     }
 }

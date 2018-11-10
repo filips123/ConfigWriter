@@ -24,7 +24,7 @@ class Config extends AbstractConfig
      *
      * @var array
      */
-    protected $supportedWriters = [];
+    protected $supportedWriters = ['\ConfigWriter\Writers\PhpWriter'];
 
     /**
      * Writes configuration to string.

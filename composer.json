@@ -1,0 +1,41 @@
+{
+    "name": "filips123/config-writer",
+    "description": "Lightweight configuration writer for PHP",
+    "keywords": [
+        "settings",
+        "configuration",
+        "config",
+        "unframework",
+        "microphp"
+    ],
+    "homepage": "https://github.com/filips123/ConfigWriter/",
+    "readme": "README.md",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Filip Š",
+            "email": "projects@filips.si",
+            "homepage": "https://projects.filips.si/"
+        }
+    ],
+    "support": {
+        "email": "projects+config-writer@cms.filips.si",
+        "issues": "https://github.com/filips123/ConfigWriter/issues/",
+        "source": "https://github.com/filips123/ConfigWriter/",
+        "docs": "https://github.com/filips123/ConfigWriter/wiki/"
+        
+    },
+    "minimum-stability": "RC",
+    "prefer-stable": true,
+    "require": {
+        "php": ">= 5.5.9"
+    },
+    "autoload": {
+        "files": [
+            "php-config.php",
+            "languages/english.php",
+            "languages/slovenian.php"
+        ]
+    }
+}

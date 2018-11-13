@@ -18,7 +18,7 @@ Lightweight configuration writer for PHP.
 
 ### Requirements
 
-MonologPHPMailer requires *[PHP][link-php] 5.5.9* or higher.
+PHP Config Writer requires *[PHP][link-php] 5.5.9* or higher.
 Also, the config directory needs to be writable by web server in order to save config file.
 
 ### Using Composer

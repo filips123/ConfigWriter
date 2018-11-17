@@ -242,8 +242,8 @@ class AbstractConfigTest extends TestCase
      */
     public function testOffsetExists()
     {
-        $this->assertTrue(isset($this->config['database']['host']));
-        $this->assertFalse(isset($this->config['user']['password']));
+        $this->assertNotEmpty($this->config['database']['host']);
+        $this->assertEmpty($this->config['user']['password']);
     }
 
     /**

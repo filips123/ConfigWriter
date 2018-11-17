@@ -24,7 +24,6 @@
         "issues": "https://github.com/filips123/ConfigWriter/issues/",
         "source": "https://github.com/filips123/ConfigWriter/",
         "docs": "https://github.com/filips123/ConfigWriter/wiki/"
-        
     },
     "minimum-stability": "RC",
     "prefer-stable": true,
